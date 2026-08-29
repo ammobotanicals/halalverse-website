@@ -226,8 +226,8 @@ li + li { margin-top: .35em; }
 .site-header--over .brand__name,
 .site-header--over .nav-toggle { color: #fff; }
 .site-header--over .nav-toggle { border-color: rgba(255,255,255,.5); }
-.site-header--over .header-cta .btn { background: #fff; color: var(--teal-deep); }
-.site-header--over .header-cta .btn:hover { background: var(--sage); color: var(--ink); }
+.site-header--over .header-cta { background: #fff; color: var(--teal-deep); }
+.site-header--over .header-cta:hover { background: var(--sage); color: var(--ink); }
 
 .site-header--over.is-stuck {
   background: rgba(255,255,255,.96);
@@ -237,7 +237,7 @@ li + li { margin-top: .35em; }
 .site-header--over.is-stuck .nav a { color: var(--ink-soft); }
 .site-header--over.is-stuck .brand__name { color: var(--teal-ink); }
 .site-header--over.is-stuck .nav-toggle { color: var(--ink); border-color: var(--line); }
-.site-header--over.is-stuck .header-cta .btn { background: var(--teal-ink); color: #fff; }
+.site-header--over.is-stuck .header-cta { background: var(--teal-ink); color: #fff; }
 
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
@@ -261,8 +261,11 @@ li + li { margin-top: .35em; }
 .site-header--over .nav a[aria-current="page"] { color: #fff; text-decoration: underline; text-underline-offset: 6px; }
 .site-header--over.is-stuck .nav a[aria-current="page"] { color: var(--teal-ink); }
 
-.header-cta { flex: none; display: flex; align-items: center; gap: 12px; }
-.header-cta .btn { min-height: 44px; padding: 10px 22px; font-size: .95rem; }
+/* Language switcher, burger and CTA sit together on the right.
+   The switcher is visible at every width — on a phone it must not
+   be buried behind the burger. */
+.header-actions { flex: none; display: flex; align-items: center; gap: 10px; }
+.header-cta { min-height: 44px; padding: 10px 22px; font-size: .95rem; }
 .nav__cta { display: none; }
 
 /* ---------- Language switcher ----------
@@ -284,8 +287,8 @@ li + li { margin-top: .35em; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 38px;
-  min-height: 32px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 0 10px;
   border-radius: var(--pill);
   font-family: "HV Text", system-ui, sans-serif;
@@ -309,21 +312,6 @@ li + li { margin-top: .35em; }
 .site-header--over.is-stuck .lang__current { background: var(--teal-ink); color: #fff; }
 .site-header--over.is-stuck .lang__other { color: var(--ink-soft); }
 
-/* Inside the mobile menu it sits on its own row, full width */
-.lang--menu { display: none; }
-@media (max-width: 1020px) {
-  .lang--menu {
-    display: inline-flex;
-    align-self: flex-start;
-    margin-top: 10px;
-    border-color: var(--line) !important;
-    background: var(--paper) !important;
-  }
-  .lang--menu .lang__current { background: var(--teal-ink) !important; color: #fff !important; }
-  .lang--menu .lang__other { color: var(--ink-soft) !important; }
-  .lang--menu .lang__current,
-  .lang--menu .lang__other { min-height: 40px; min-width: 48px; font-size: .9rem; }
-}
 
 .nav-toggle {
   display: none; align-items: center; gap: 9px; min-height: 44px; padding: 8px 14px;
@@ -334,6 +322,7 @@ li + li { margin-top: .35em; }
 
 @media (max-width: 1020px) {
   .nav-toggle { display: inline-flex; }
+  .header-cta { display: none; }
   .nav {
     display: none; position: absolute; top: 100%; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 2px;
@@ -349,13 +338,19 @@ li + li { margin-top: .35em; }
      teal on a dark teal button. */
   .nav a.nav__cta { display: inline-flex; margin-top: 10px; color: #fff !important; }
   .nav a.nav__cta:hover { color: #fff !important; }
-  .header-cta { display: none; }
-  .nav .lang { align-self: flex-start; }
+}
+
+@media (max-width: 560px) {
+  /* Icon-only burger so the language switcher always fits beside it */
+  .nav-toggle__label { display: none; }
+  .nav-toggle { padding: 8px 11px; }
+  .header-actions { gap: 8px; }
 }
 
 @media (max-width: 380px) {
-  .brand__name { font-size: .92rem; letter-spacing: .14em; }
+  .brand__name { display: none; }
   .btn { padding: 12px 18px; font-size: .95rem; }
+  .lang__current, .lang__other { min-width: 36px; padding: 0 7px; }
 }
 
 /* ---------- Hero: full-bleed ---------- */
@@ -395,7 +390,11 @@ li + li { margin-top: .35em; }
   letter-spacing: .32em; text-transform: uppercase; color: rgba(255,255,255,.9);
 }
 
-.hero h1 { color: #fff; max-width: 16ch; text-shadow: 0 2px 28px rgba(4,18,17,.55); }
+.hero h1 { color: #fff; max-width: 20ch; text-wrap: nowrap; text-shadow: 0 2px 28px rgba(4,18,17,.55); }
+/* Keep the headline at exactly the two lines the <br> gives it, at every
+   width. Shrink the type instead of letting it wrap to three. */
+@media (max-width: 620px) { .hero h1 { font-size: 2.05rem; max-width: 100%; } }
+@media (max-width: 380px) { .hero h1 { font-size: 1.78rem; } }
 
 .hero__lede {
   font-size: clamp(1.02rem, .95rem + .4vw, 1.22rem);
