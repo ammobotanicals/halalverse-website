@@ -318,7 +318,8 @@ li + li { margin-top: .35em; }
   background: transparent; border: 1px solid var(--line); border-radius: 8px;
   font-family: inherit; font-size: .95rem; font-weight: 700; color: var(--ink); cursor: pointer;
 }
-.nav-toggle svg { width: 18px; height: 18px; }
+.nav-toggle svg { width: 20px; height: 20px; }
+.nav-toggle { padding: 8px 12px; }
 
 @media (max-width: 1020px) {
   .nav-toggle { display: inline-flex; }
@@ -341,9 +342,6 @@ li + li { margin-top: .35em; }
 }
 
 @media (max-width: 560px) {
-  /* Icon-only burger so the language switcher always fits beside it */
-  .nav-toggle__label { display: none; }
-  .nav-toggle { padding: 8px 11px; }
   .header-actions { gap: 8px; }
 }
 
