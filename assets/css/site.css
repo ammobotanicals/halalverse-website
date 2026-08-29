@@ -226,8 +226,8 @@ li + li { margin-top: .35em; }
 .site-header--over .brand__name,
 .site-header--over .nav-toggle { color: #fff; }
 .site-header--over .nav-toggle { border-color: rgba(255,255,255,.5); }
-.site-header--over .header-cta { background: #fff; color: var(--teal-deep); }
-.site-header--over .header-cta:hover { background: var(--sage); color: var(--ink); }
+.site-header--over .header-cta .btn { background: #fff; color: var(--teal-deep); }
+.site-header--over .header-cta .btn:hover { background: var(--sage); color: var(--ink); }
 
 .site-header--over.is-stuck {
   background: rgba(255,255,255,.96);
@@ -237,7 +237,7 @@ li + li { margin-top: .35em; }
 .site-header--over.is-stuck .nav a { color: var(--ink-soft); }
 .site-header--over.is-stuck .brand__name { color: var(--teal-ink); }
 .site-header--over.is-stuck .nav-toggle { color: var(--ink); border-color: var(--line); }
-.site-header--over.is-stuck .header-cta { background: var(--teal-ink); color: #fff; }
+.site-header--over.is-stuck .header-cta .btn { background: var(--teal-ink); color: #fff; }
 
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
@@ -261,8 +261,69 @@ li + li { margin-top: .35em; }
 .site-header--over .nav a[aria-current="page"] { color: #fff; text-decoration: underline; text-underline-offset: 6px; }
 .site-header--over.is-stuck .nav a[aria-current="page"] { color: var(--teal-ink); }
 
-.header-cta { flex: none; min-height: 44px; padding: 10px 22px; font-size: .95rem; }
+.header-cta { flex: none; display: flex; align-items: center; gap: 12px; }
+.header-cta .btn { min-height: 44px; padding: 10px 22px; font-size: .95rem; }
 .nav__cta { display: none; }
+
+/* ---------- Language switcher ----------
+   Two letters, current one solid, the other a link to the same
+   page in the other language. Never sends you to the home page. */
+
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: var(--pill);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  flex: none;
+}
+.lang__current,
+.lang__other {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  min-height: 32px;
+  padding: 0 10px;
+  border-radius: var(--pill);
+  font-family: "HV Text", system-ui, sans-serif;
+  font-size: .82rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-decoration: none;
+  line-height: 1;
+}
+.lang__current { background: var(--teal-ink); color: #fff; }
+.lang__other { color: var(--ink-soft); }
+.lang__other:hover { background: var(--sage-soft); color: var(--ink); }
+
+/* Over the hero the header is transparent, so the switcher goes light */
+.site-header--over .lang { border-color: rgba(255,255,255,.45); background: rgba(255,255,255,.12); }
+.site-header--over .lang__current { background: #fff; color: var(--teal-deep); }
+.site-header--over .lang__other { color: rgba(255,255,255,.9); }
+.site-header--over .lang__other:hover { background: rgba(255,255,255,.2); color: #fff; }
+
+.site-header--over.is-stuck .lang { border-color: var(--line); background: var(--paper); }
+.site-header--over.is-stuck .lang__current { background: var(--teal-ink); color: #fff; }
+.site-header--over.is-stuck .lang__other { color: var(--ink-soft); }
+
+/* Inside the mobile menu it sits on its own row, full width */
+.lang--menu { display: none; }
+@media (max-width: 1020px) {
+  .lang--menu {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: 10px;
+    border-color: var(--line) !important;
+    background: var(--paper) !important;
+  }
+  .lang--menu .lang__current { background: var(--teal-ink) !important; color: #fff !important; }
+  .lang--menu .lang__other { color: var(--ink-soft) !important; }
+  .lang--menu .lang__current,
+  .lang--menu .lang__other { min-height: 40px; min-width: 48px; font-size: .9rem; }
+}
 
 .nav-toggle {
   display: none; align-items: center; gap: 9px; min-height: 44px; padding: 8px 14px;
@@ -283,8 +344,13 @@ li + li { margin-top: .35em; }
   .nav[data-open="true"] { display: flex; }
   .nav a { padding: 13px 12px; font-size: 1.05rem; color: var(--ink-soft) !important; }
   .nav a[aria-current="page"] { color: var(--teal-ink) !important; text-decoration: none; }
-  .nav__cta { display: inline-flex; margin-top: 10px; color: #fff !important; }
+  /* Needs .nav a.nav__cta, not .nav__cta: `.nav a` above is (0,1,1) and
+     would otherwise win the !important fight and paint the label dark
+     teal on a dark teal button. */
+  .nav a.nav__cta { display: inline-flex; margin-top: 10px; color: #fff !important; }
+  .nav a.nav__cta:hover { color: #fff !important; }
   .header-cta { display: none; }
+  .nav .lang { align-self: flex-start; }
 }
 
 @media (max-width: 380px) {

@@ -1,31 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://halalverseindonesia.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalverseindonesia.com/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalverseindonesia.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalverseindonesia.com/" />
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://halalverseindonesia.com/id/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalverseindonesia.com/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalverseindonesia.com/id/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalverseindonesia.com/" />
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://halalverseindonesia.com/certification/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalverseindonesia.com/certification/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalverseindonesia.com/id/sertifikasi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalverseindonesia.com/certification/" />
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://halalverseindonesia.com/id/sertifikasi/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalverseindonesia.com/certification/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalverseindonesia.com/id/sertifikasi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalverseindonesia.com/certification/" />
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://halalverseindonesia.com/application-form/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalverseindonesia.com/application-form/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalverseindonesia.com/id/formulir-pengajuan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalverseindonesia.com/application-form/" />
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://halalverseindonesia.com/id/formulir-pengajuan/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalverseindonesia.com/application-form/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalverseindonesia.com/id/formulir-pengajuan/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalverseindonesia.com/application-form/" />
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://halalverseindonesia.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalverseindonesia.com/contact/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalverseindonesia.com/id/kontak/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalverseindonesia.com/contact/" />
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://halalverseindonesia.com/id/kontak/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalverseindonesia.com/contact/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalverseindonesia.com/id/kontak/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalverseindonesia.com/contact/" />
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://halalverseindonesia.com/thank-you/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalverseindonesia.com/thank-you/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalverseindonesia.com/id/terima-kasih/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalverseindonesia.com/thank-you/" />
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://halalverseindonesia.com/id/terima-kasih/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://halalverseindonesia.com/thank-you/" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://halalverseindonesia.com/id/terima-kasih/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://halalverseindonesia.com/thank-you/" />
     <lastmod>2026-08-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
